@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Job_Category;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 class JobCategoriesSeeder extends Seeder
@@ -23,7 +23,7 @@ class JobCategoriesSeeder extends Seeder
 
         foreach ($categories as $category)
         {
-            Job_Category::Create(
+            Category::Create(
 
                 [
                     'slug' => str_slug($category) ,

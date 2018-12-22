@@ -16,9 +16,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//auto routes
+//will be deleted after the project
+
+Route::get('home/{id}',function($id){
+
+    auth()->loginUsingId($id);
+
+    return redirect()->home();
+
+});
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
 
 //Company Routes
 

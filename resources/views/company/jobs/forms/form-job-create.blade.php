@@ -42,8 +42,8 @@
                 <label>Job Category</label>
                 <select class="js-example-basic-multiple form-control" name="job_categories[]" multiple="multiple">
                     <!-- From Database -->
-                    @foreach($job_categories as $job_category)
-                        <option value="{{ $job_category -> id }}" > {{ $job_category->name }} </option>
+                    @foreach($categories as $category)
+                        <option value="{{ $category -> id }}" > {{ $category->name }} </option>
                     @endforeach
                 </select>
             </div>

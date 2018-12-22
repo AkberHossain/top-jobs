@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Job;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,17 +25,29 @@ class HomeController extends Controller
     public function index()
     {
         if(auth()->user()->isCompany())
-            return view('company.home.index');
+        {
+            $jobs = auth()->user()->jobs()->get();
+
+            $compact = compact('jobs');
+
+            return view('company.home.index' , $compact);
+        }
+
         elseif(auth()->user()->isAdmin())
+        {
             dd("admin");
+        }
+
         elseif(auth()->user()->isCandidate())
+        {
             dd("candidate");
+        }
+
         else
         {
             auth()->logout();
             return redirect()->route('login');
         }
-
 
     }
 }
