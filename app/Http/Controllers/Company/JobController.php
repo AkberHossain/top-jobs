@@ -7,6 +7,7 @@ use App\Models\Experience;
 use App\Models\Industry;
 use App\Models\Job;
 use App\Models\Category;
+use App\Models\Job_Category;
 use App\Models\Job_Type;
 use App\Models\Qualification;
 use App\Models\Salary;
@@ -32,10 +33,7 @@ class JobController extends Controller
 
     public function storeJobCreateForm(Request $request)
     {
-
-        //dd($request->all());
-
-        Job::Create(
+        $job = Job::Create(
 
             [
                 'user_id'  => auth()->user()->id ,
@@ -49,5 +47,16 @@ class JobController extends Controller
             ]
 
         );
+
+        foreach ($request->job_categories as $job_category)
+        {
+            Job_Category::Create([
+
+                'job_id' =>  $job->id,
+                'category_id' => $job_category
+            ]);
+        }
+
+        return redirect()->home();
     }
 }

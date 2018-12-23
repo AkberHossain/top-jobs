@@ -18,11 +18,14 @@
         </tr>
         </thead>
         <tbody>
+
             @foreach($jobs as $key => $job)
-                <td>{{ $key+1 }}</td>
-                <td>{{ $job->title }}</td>
-                <td>{{ $job->getJobtype->name }}</td>
-                <td><a class="btn btn-primary" href="#" role="button">Show Details</a></td>
+                <tr>
+                    <td>{{ $key+1 }}</td>
+                    <td>{{ $job->title }}</td>
+                    <td>{{ $job->getJobtype->name }}</td>
+                    <td><a class="btn btn-primary" href="#" role="button">Show Details</a></td>
+                </tr>
             @endforeach
         </tbody>
     </table>

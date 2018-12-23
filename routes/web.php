@@ -16,6 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 //auto routes
 //will be deleted after the project
 
@@ -26,6 +27,14 @@ Route::get('home/{id}',function($id){
     return redirect()->home();
 
 });
+
+
+//Website Route
+Route::get('top-jobs' , 'WebsiteController@index' )->name('show.website');
+
+
+//Job List Route
+Route::get()->name();
 
 
 

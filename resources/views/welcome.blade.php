@@ -74,7 +74,7 @@
                 <div class="links">
                     <a href="{{ route('login') }}">Login</a>
                     <a href="{{ route('register') }}">Register</a>
-                    <a href="#">Website</a>
+                    <a href="{{ route('show.website') }}">Website</a>
                 </div>
             </div>
         </div>
