@@ -25,4 +25,9 @@
     @endforeach
     </div>
 
+    <a class="btn btn-primary btn-lg" href="#" role="button">Browse all Category</a>
+
+    <br>
+    <br>
+
 </div>

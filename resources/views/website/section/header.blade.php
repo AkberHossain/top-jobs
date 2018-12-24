@@ -1,4 +1,4 @@
-<div class="jumbotron mt-2">
+<div class="jumbotron mt-2" style="margin: 0;">
     <div class="container text-center">
         <h1>The Easiest Way to Get Your New Job</h1>
         <p>Find Jobs, Employment & Career Opportunities</p>

@@ -10,12 +10,24 @@
 
 <!-- create an account -->
 
+@include('website.section.create_an_account')
+
 <!-- featured jobs -->
+
+@include('website.section.feature_jobs')
 
 <!-- About us -->
 
+@include('website.section.about_us')
+
 <!-- Career Tips -->
+
+@include('website.section.career_tips')
 
 <!-- FAQ -->
 
+@include('website.section.FAQ')
+
 <!-- Footer -->
+
+@include('website.footer')
