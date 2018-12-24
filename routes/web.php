@@ -34,7 +34,7 @@ Route::get('top-jobs' , 'WebsiteController@index' )->name('show.website');
 
 
 //Job List Route
-Route::get()->name();
+//Route::get()->name();
 
 
 
