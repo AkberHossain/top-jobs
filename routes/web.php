@@ -17,31 +17,17 @@ Route::get('/', function () {
 });
 
 
-//auto routes
-//will be deleted after the project
-
-Route::get('home/{id}',function($id){
-
-    auth()->loginUsingId($id);
-
-    return redirect()->home();
-
-});
-
-
-//Website Route
-Route::get('top-jobs' , 'WebsiteController@index' )->name('show.website');
-
-
-//Job List Route
-//Route::get()->name();
-
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
+
+
+
+//Website Route
+Route::get('top-jobs' , 'WebsiteController@index' )->name('show.website');
 
 
 //Company Routes
@@ -63,3 +49,38 @@ route::group(
     }
 
 );
+
+
+//Candidate Route
+
+route::group(
+
+    [
+        'prefix' => 'candidate' ,
+        'namespace' => 'Candidate' ,
+        'middleware' => 'auth'
+    ]
+
+    ,
+
+    function(){
+
+        Route::get( 'job/{id}' , 'JobController@showJobDetails' )->name('candidate.show-job-details');
+        Route::get( 'job/{id}/apply' , 'JobController@showJobApplyForm' )->name('candidate.show-job-apply-form');
+        Route::post( 'job/{id}/apply' , 'JobController@storeJobApplyForm' )->name('candidate.store-job-apply-form');
+
+    });
+
+
+
+
+//auto routes
+//will be deleted after the project
+
+Route::get('home/{id}',function($id){
+
+    auth()->loginUsingId($id);
+
+    return redirect()->home();
+
+});

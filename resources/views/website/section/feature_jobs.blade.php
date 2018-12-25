@@ -12,7 +12,10 @@
                 <div class="media">
                     <img src="https://via.placeholder.com/100" class="mr-3" alt="...">
                     <div class="media-body">
-                        <h3 class="mt-0">{{ $feature_job->title }}</h3>
+                        <a href="{{ route('candidate.show-job-details' , $feature_job->id) }}">
+                            <h3 class="mt-0">{{ $feature_job->title }}</h3>
+                        </a>
+
                         <p class="text-danger">{{ $feature_job->getUserInfo->name }}</p>
                         <p class="text-muted">{{ $feature_job->location }}</p>
                     </div>
